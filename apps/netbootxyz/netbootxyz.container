@@ -12,7 +12,7 @@ Image=ghcr.io/netbootxyz/netbootxyz:0.7.1-nbxyz1@sha256:9e37f3844ef348d0c17d1f8d
 Label=traefik.enable="true"
 Label=traefik.http.routers.netbootxyz.entrypoints="web"
 Label=traefik.http.routers.netbootxyz.rule=Host'(`netbootxyz.house.casa`)'
-Label=traefik.http.services.netbootxyz.loadbalancer.server.port="4000"
+Label=traefik.http.services.netbootxyz.loadbalancer.server.port="3000"
 IP=192.168.4.125
 Network=containernet
 Volume=./netbootxyz/config:/config
