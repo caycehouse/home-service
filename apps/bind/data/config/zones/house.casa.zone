@@ -1,0 +1,27 @@
+; SOA Records
+$TTL 3600
+$ORIGIN house.casa.
+@ 3600 IN SOA house.casa. hostess.internal. (
+    0000000001         ; serial number
+    7200               ; refresh period
+    3600               ; retry period
+    1209600            ; expire time
+    3600               ; minimum ttl
+)
+
+; NS Records
+@                          IN  NS     hostess.internal.
+
+; LAN
+unifi                      IN  A      192.168.4.1
+
+; Containers
+op-connect-api             IN  A      192.168.4.124
+traefik                    IN  A      192.168.4.126
+gatus                      IN  A      192.168.4.127
+matchbox                   IN  A      192.168.4.128
+smtp-relay                 IN  A      192.168.4.129
+
+; CNAME records
+blocky                     IN  CNAME  traefik.house.casa.
+status                     IN  CNAME  traefik.house.casa.
