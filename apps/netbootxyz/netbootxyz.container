@@ -13,7 +13,7 @@ Label=traefik.enable="true"
 Label=traefik.http.routers.netbootxyz.entrypoints="web"
 Label=traefik.http.routers.netbootxyz.rule=Host'(`netbootxyz.house.casa`)'
 Label=traefik.http.services.netbootxyz.loadbalancer.server.port="3000"
-IP=192.168.4.125
+IP=192.168.4.128
 Network=containernet
 Volume=./netbootxyz/config:/config
 Volume=./netbootxyz/assets:/assets
