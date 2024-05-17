@@ -90,7 +90,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     Name = containernet
     [Network]
     IPForward = yes
-    Address = 192.168.4.120/24'
+    Address = 192.168.4.120/22'
     ```
 
 4. Disable `networkmanager`, then enable and start `systemd-networkd`
