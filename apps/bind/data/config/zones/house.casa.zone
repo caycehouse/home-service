@@ -19,7 +19,6 @@ unifi                      IN  A      192.168.4.1
 op-connect-api             IN  A      192.168.4.124
 traefik                    IN  A      192.168.4.126
 gatus                      IN  A      192.168.4.127
-matchbox                   IN  A      192.168.4.128
 smtp-relay                 IN  A      192.168.4.129
 
 ; CNAME records

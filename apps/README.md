@@ -47,10 +47,6 @@
 
 <https://github.com/TwiN/gatus>
 
-## matchbox
-
-<https://github.com/poseidon/matchbox>
-
 ## node-exporter
 
 <https://github.com/prometheus/node_exporter>
