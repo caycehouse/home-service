@@ -1,0 +1,4 @@
+.private/
+.task/
+age.key
+.decrypted~*.yaml
