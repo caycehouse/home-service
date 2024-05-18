@@ -13,7 +13,7 @@ EnvironmentFile=./gatus/config/config.sops.env
 Image=ghcr.io/twin/gatus:v5.10.0@sha256:658a9cb993ff0b16832947dab8de885b2e2a66037330b839310fa3f39d5c00f4
 IP=192.168.4.127
 Label=traefik.enable="true"
-Label=traefik.http.routers.gatus.entrypoints="web"
+Label=traefik.http.routers.gatus.entrypoints="websecure"
 Label=traefik.http.routers.gatus.rule=Host'(`status.housefam.win`)'
 Label=traefik.http.services.gatus.loadbalancer.server.port="80"
 Network=containernet

@@ -60,5 +60,5 @@ http:
   routers:
     dashboard:
       rule: Host(`traefik.housefam.win`)
-      entryPoints: ["web"]
+      entryPoints: ["websecure"]
       service: api@internal
