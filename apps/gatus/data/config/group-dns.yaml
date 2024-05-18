@@ -7,24 +7,24 @@ endpoints:
       query-name: google.com
       query-type: A
     conditions: ["[DNS_RCODE] == NOERROR"]
-  - name: Primary Blocky (hostess.internal)
-    group: DNS
-    url: 192.168.4.121
-    dns:
-      query-name: hostess.internal
-      query-type: A
-    conditions: ["[BODY] == 192.168.1.42", "[DNS_RCODE] == NOERROR"]
-  - name: Primary Blocky (unifi.housefam.win)
-    group: DNS
-    url: 192.168.4.121
-    dns:
-      query-name: unifi.housefam.win
-      query-type: A
-    conditions: ["[BODY] == 192.168.1.1", "[DNS_RCODE] == NOERROR"]
-  - name: Primary Blocky (echo-server.housefam.casa)
-    group: DNS
-    url: 192.168.4.121
-    dns:
-      query-name: echo-server.housefam.casa
-      query-type: A
-    conditions: ["[BODY] == 192.168.42.126", "[DNS_RCODE] == NOERROR"]
+  # - name: Primary Blocky (hostess.internal)
+  #   group: DNS
+  #   url: 192.168.4.121
+  #   dns:
+  #     query-name: hostess.internal
+  #     query-type: A
+  #   conditions: ["[BODY] == 192.168.1.42", "[DNS_RCODE] == NOERROR"]
+  # - name: Primary Blocky (unifi.housefam.win)
+  #   group: DNS
+  #   url: 192.168.4.121
+  #   dns:
+  #     query-name: unifi.housefam.win
+  #     query-type: A
+  #   conditions: ["[BODY] == 192.168.1.1", "[DNS_RCODE] == NOERROR"]
+  # - name: Primary Blocky (echo-server.housefam.casa)
+  #   group: DNS
+  #   url: 192.168.4.121
+  #   dns:
+  #     query-name: echo-server.housefam.casa
+  #     query-type: A
+  #   conditions: ["[BODY] == 192.168.42.126", "[DNS_RCODE] == NOERROR"]
