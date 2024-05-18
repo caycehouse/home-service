@@ -15,5 +15,7 @@ endpoints:
   - name: Heartbeat
     group: Gatus
     url: ${HEARTBEAT_URL}
+    client:
+      dns-resolver: "tcp://192.168.4.121:53"
     interval: 5m
     conditions: ["[STATUS] == 200"]
