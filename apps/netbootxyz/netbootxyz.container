@@ -10,7 +10,7 @@ Environment=WEB_APP_PORT=3000
 Image=ghcr.io/netbootxyz/netbootxyz:0.7.1-nbxyz1@sha256:9e37f3844ef348d0c17d1f8d111e63e1d7b6e98e4d14f25935e3f475b06c5994
 Label=traefik.enable="true"
 Label=traefik.http.routers.netbootxyz.entrypoints="web"
-Label=traefik.http.routers.netbootxyz.rule=Host'(`netbootxyz.house.casa`)'
+Label=traefik.http.routers.netbootxyz.rule=Host'(`netbootxyz.housefam.win`)'
 Label=traefik.http.services.netbootxyz.loadbalancer.server.port="3000"
 IP=192.168.4.128
 Network=containernet

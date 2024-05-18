@@ -23,7 +23,8 @@ conditional:
     168.192.in-addr.arpa: 192.168.4.1
     internal: 192.168.4.1
     # Forward to bind
-    house.casa: 192.168.4.123
+    housefam.casa: 192.168.4.123
+    housefam.win: 192.168.4.123
 
 clientLookup:
   upstream: 192.168.4.1

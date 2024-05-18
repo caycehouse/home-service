@@ -59,6 +59,6 @@ serversTransport:
 http:
   routers:
     dashboard:
-      rule: Host(`traefik.house.casa`)
+      rule: Host(`traefik.housefam.win`)
       entryPoints: ["web"]
       service: api@internal

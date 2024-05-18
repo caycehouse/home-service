@@ -16,11 +16,11 @@ endpoints:
       query-type: A
     conditions: ["[BODY] == 192.168.1.42", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
-  - name: Primary Blocky (unifi.house.casa)
+  - name: Primary Blocky (unifi.housefam.win)
     group: DNS
     url: 192.168.1.121
     dns:
-      query-name: unifi.house.casa
+      query-name: unifi.housefam.win
       query-type: A
     conditions: ["[BODY] == 192.168.1.1", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
@@ -32,11 +32,11 @@ endpoints:
       query-type: A
     conditions: ["[BODY] == 192.168.42.126", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
-  - name: Primary Blocky (echo-server.house.casa)
+  - name: Primary Blocky (echo-server.housefam.casa)
     group: DNS
     url: 192.168.1.121
     dns:
-      query-name: echo-server.house.casa
+      query-name: echo-server.housefam.casa
       query-type: A
     conditions: ["[BODY] == 192.168.42.100", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]

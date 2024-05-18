@@ -1,7 +1,7 @@
 ; SOA Records
 $TTL 3600
-$ORIGIN house.casa.
-@ 3600 IN SOA house.casa. hostess.internal. (
+$ORIGIN housefam.win.
+@ 3600 IN SOA housefam.win. hostess.internal. (
     0000000001         ; serial number
     7200               ; refresh period
     3600               ; retry period
@@ -23,5 +23,5 @@ netbootxyz                 IN  A      192.168.4.128
 smtp-relay                 IN  A      192.168.4.129
 
 ; CNAME records
-blocky                     IN  CNAME  traefik.house.casa.
-status                     IN  CNAME  traefik.house.casa.
+blocky                     IN  CNAME  traefik.housefam.win.
+status                     IN  CNAME  traefik.housefam.win.
