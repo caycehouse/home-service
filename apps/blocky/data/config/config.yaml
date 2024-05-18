@@ -33,6 +33,7 @@ connectIPVersion: v4
 caching:
   minTime: 15m
   prefetching: true
+  cacheTimeNegative: -1
 
 ecs:
   useAsClient: true

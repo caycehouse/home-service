@@ -12,69 +12,8 @@ connectivity:
     target: 1.1.1.1:53
     interval: 1m
 endpoints:
-  #
-  # DNS group
-  #
-  - name: blocky-external
-    group: DNS
-    url: 192.168.4.121
-    dns:
-      query-name: google.com
-      query-type: A
-    conditions: ["[DNS_RCODE] == NOERROR"]
-  - name: blocky-internal
-    group: DNS
-    url: 192.168.4.121
-    dns:
-      query-name: hostess.internal
-      query-type: A
-    conditions: ["[BODY] == 192.168.4.42", "[DNS_RCODE] == NOERROR"]
-  - name: bind-external
-    group: DNS
-    url: 192.168.4.123
-    dns:
-      query-name: google.com
-      query-type: A
-    conditions: ["[DNS_RCODE] == NOERROR"]
-  - name: bind-internal
-    group: DNS
-    url: 192.168.4.123
-    dns:
-      query-name: hostess.internal
-      query-type: A
-    conditions: ["[BODY] == 192.168.4.42", "[DNS_RCODE] == NOERROR"]
-  #
-  # Devices group
-  #
-  - name: Unifi Dream Machine (ICMP)
-    group: Devices
-    url: icmp://192.168.4.1
-    conditions: ["[CONNECTED] == true"]
-  - name: Dell iDRAC r630
-    group: Devices
-    url: icmp://192.168.6.248
-    conditions: ["[CONNECTED] == true"]
-  - name: Dell iDRAC r720XD
-    group: Devices
-    url: icmp://192.168.5.198
-    conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node babybundts (ICMP)
-    group: Devices
-    url: icmp://192.168.4.80
-    conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node danish (ICMP)
-    group: Devices
-    url: icmp://192.168.4.81
-    conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node honeybun (ICMP)
-    group: Devices
-    url: icmp://192.168.4.82
-    conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node donuts (ICMP)
-    group: Devices
-    url: icmp://192.168.7.52
-    conditions: ["[CONNECTED] == true"]
-  - name: NAS (ICMP)
-    group: Devices
-    url: icmp://192.168.7.28
-    conditions: ["[CONNECTED] == true"]
+  - name: Heartbeat
+    group: Gatus
+    url: ${HEARTBEAT_URL}
+    interval: 5m
+    conditions: ["[STATUS] == 200"]

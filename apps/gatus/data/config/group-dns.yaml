@@ -1,0 +1,42 @@
+endpoints:
+  # Primary
+  - name: Primary Blocky (google.com)
+    group: DNS
+    url: 192.168.1.121
+    dns:
+      query-name: google.com
+      query-type: A
+    conditions: ["[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
+  - name: Primary Blocky (hostess.internal)
+    group: DNS
+    url: 192.168.1.121
+    dns:
+      query-name: hostess.internal
+      query-type: A
+    conditions: ["[BODY] == 192.168.1.42", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
+  - name: Primary Blocky (unifi.house.casa)
+    group: DNS
+    url: 192.168.1.121
+    dns:
+      query-name: unifi.house.casa
+      query-type: A
+    conditions: ["[BODY] == 192.168.1.1", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
+  - name: Primary Blocky (echo-server.devbu.io)
+    group: DNS
+    url: 192.168.1.121
+    dns:
+      query-name: echo-server.devbu.io
+      query-type: A
+    conditions: ["[BODY] == 192.168.42.126", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
+  - name: Primary Blocky (echo-server.house.casa)
+    group: DNS
+    url: 192.168.1.121
+    dns:
+      query-name: echo-server.house.casa
+      query-type: A
+    conditions: ["[BODY] == 192.168.42.100", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
