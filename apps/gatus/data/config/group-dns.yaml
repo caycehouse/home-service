@@ -1,26 +1,28 @@
 endpoints:
-  # Primary
-  - name: Primary Blocky (google.com)
+  - name: Blocky (google.com)
     group: DNS
     url: 192.168.4.121
     dns:
       query-name: google.com
       query-type: A
     conditions: ["[DNS_RCODE] == NOERROR"]
-  - name: Primary Blocky (hostess.internal)
+    alerts: [{ type: pushover }]
+  - name: Blocky (hostess.internal)
     group: DNS
     url: 192.168.4.121
     dns:
       query-name: hostess.internal
       query-type: A
-    conditions: ["[BODY] == 192.168.1.42", "[DNS_RCODE] == NOERROR"]
-  - name: Primary Blocky (unifi.housefam.win)
+    conditions: ["[BODY] == 192.168.4.42", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
+  - name: Blocky (unifi.housefam.win)
     group: DNS
     url: 192.168.4.121
     dns:
       query-name: unifi.housefam.win
       query-type: A
-    conditions: ["[BODY] == 192.168.1.1", "[DNS_RCODE] == NOERROR"]
+    conditions: ["[BODY] == 192.168.4.1", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
   # - name: Primary Blocky (echo-server.housefam.casa)
   #   group: DNS
   #   url: 192.168.4.121

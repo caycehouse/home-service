@@ -1,33 +1,41 @@
 endpoints:
-  - name: Unifi Dream Machine (ICMP)
-    group: Devices
+  - name: Unifi Dream Machine
+    group: ICMP
     url: icmp://192.168.4.1
     conditions: ["[CONNECTED] == true"]
+    alerts: [{ type: pushover }]
   - name: Dell iDRAC r630
-    group: Devices
+    group: ICMP
     url: icmp://192.168.6.248
     conditions: ["[CONNECTED] == true"]
+    alerts: [{ type: pushover }]
   - name: Dell iDRAC r720XD
-    group: Devices
+    group: ICMP
     url: icmp://192.168.5.198
     conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node babybundts (ICMP)
-    group: Devices
+    alerts: [{ type: pushover }]
+  - name: Kubernetes Node babybundts
+    group: ICMP
     url: icmp://192.168.4.80
     conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node danish (ICMP)
-    group: Devices
+    alerts: [{ type: pushover }]
+  - name: Kubernetes Node danish
+    group: ICMP
     url: icmp://192.168.4.81
     conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node honeybun (ICMP)
-    group: Devices
+    alerts: [{ type: pushover }]
+  - name: Kubernetes Node honeybun
+    group: ICMP
     url: icmp://192.168.4.82
     conditions: ["[CONNECTED] == true"]
-  - name: Kubernetes Node donuts (ICMP)
-    group: Devices
+    alerts: [{ type: pushover }]
+  - name: Kubernetes Node donuts
+    group: ICMP
     url: icmp://192.168.7.52
     conditions: ["[CONNECTED] == true"]
-  - name: NAS (ICMP)
-    group: Devices
+    alerts: [{ type: pushover }]
+  - name: NAS
+    group: ICMP
     url: icmp://192.168.7.28
     conditions: ["[CONNECTED] == true"]
+    alerts: [{ type: pushover }]
