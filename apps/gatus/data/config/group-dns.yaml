@@ -23,10 +23,11 @@ endpoints:
       query-type: A
     conditions: ["[BODY] == 192.168.4.1", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
-  # - name: Primary Blocky (echo-server.housefam.casa)
-  #   group: DNS
-  #   url: 192.168.4.121
-  #   dns:
-  #     query-name: echo-server.housefam.casa
-  #     query-type: A
-  #   conditions: ["[BODY] == 192.168.42.126", "[DNS_RCODE] == NOERROR"]
+  - name: Primary Blocky (echo-server.housefam.casa)
+    group: DNS
+    url: 192.168.4.121
+    dns:
+      query-name: echo-server.housefam.casa
+      query-type: A
+    conditions: ["[BODY] == 192.168.4.4", "[DNS_RCODE] == NOERROR"]
+    alerts: [{ type: pushover }]
