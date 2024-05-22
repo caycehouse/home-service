@@ -4,14 +4,14 @@ ports:
   http: 0.0.0.0:4000
 
 bootstrapDns:
-  - https://1.1.1.1/dns-query
-  - https://9.9.9.9/dns-query
+  - tcp-tls:1.1.1.1:853
+  - tcp-tls:9.9.9.9:853
 
 upstreams:
   groups:
     default:
-      - https://1.1.1.1/dns-query
-      - https://9.9.9.9/dns-query
+      - tcp-tls:1.1.1.1:853
+      - tcp-tls:9.9.9.9:853
 
 conditional:
   fallbackUpstream: false
