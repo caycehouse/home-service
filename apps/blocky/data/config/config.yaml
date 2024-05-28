@@ -13,18 +13,16 @@ upstreams:
       - tcp-tls:1.1.1.1:853
       - tcp-tls:9.9.9.9:853
 
+clientLookup:
+  upstream: &router 192.168.4.1
+
 conditional:
   fallbackUpstream: false
   mapping:
-    # Forward to router
-    168.192.in-addr.arpa: 192.168.4.1
-    internal: 192.168.4.1
-    # Forward to bind
-    housefam.casa: 192.168.4.123
-    housefam.win: 192.168.4.123
-
-clientLookup:
-  upstream: 192.168.4.1
+    168.192.in-addr.arpa: *router
+    internal: *router
+    housefam.casa: *router
+    housefam.win: *router
 
 connectIPVersion: v4
 
