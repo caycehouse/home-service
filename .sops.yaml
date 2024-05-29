@@ -6,8 +6,8 @@ creation_rules:
     key_groups:
       - age:
           - age1dhj7waq642v3tffk0y9yy0wjl853uhxevpggvk5c55g8x66mr4jq2ajq2n
-  - # Encrypt .json and bind's .key files
-    path_regex: (apps|containers)/.+\.sops\.(json|key)
+  - # Encrypt .json files
+    path_regex: (apps|containers)/.+\.sops\.json
     input_type: json
     key_groups:
       - age:
