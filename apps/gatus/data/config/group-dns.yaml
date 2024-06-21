@@ -29,5 +29,5 @@ endpoints:
     dns:
       query-name: echo-server.housefam.casa
       query-type: A
-    conditions: ["[BODY] == 192.168.4.4", "[DNS_RCODE] == NOERROR"]
+    conditions: ["[BODY] == 192.168.42.126", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
