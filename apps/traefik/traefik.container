@@ -9,7 +9,7 @@ ContainerName=traefik
 Environment=TZ=America/New_York
 EnvironmentFile=./traefik/config/config.sops.env
 Image=docker.io/library/traefik:v3.1.1@sha256:9f68c02f50786068f6687128ae8e8632b0bc24bc806705c9ff9fcbe9e38d19ae
-IP=172.24.1.126
+IP=192.168.1.126
 Network=containernet
 SecurityLabelType=container_runtime_t
 Volume=./traefik/cache:/data
