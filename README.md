@@ -154,7 +154,7 @@ sudo systemctl disable --now firewalld.service
 
 | Name | Subnet | DHCP range | ARP reserved |
 |------|--------|------------|--------------|
-| LAN | 172.24.1.0/24 | 5.1-7.254 | 4.120-4.149 |
+| LAN | 172.24.1.0/24 | 150-254 | 120-149 |
 
 ## Related Projects
 
