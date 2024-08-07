@@ -55,9 +55,9 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     sudo podman network create \
         --driver=ipvlan \
         --ipam-driver=host-local \
-        --subnet=192.168.4.0/22 \
-        --gateway=192.168.4.1 \
-        --ip-range=192.168.4.121-192.168.4.149 \
+        --subnet=172.24.1.0/24 \
+        --gateway=172.24.1.1 \
+        --ip-range=172.24.1.121-172.24.1.149 \
         containernet
     ```
 
@@ -90,7 +90,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     Name = containernet
     [Network]
     IPForward = yes
-    Address = 192.168.4.120/22'
+    Address = 172.24.1.120/24'
     ```
 
 4. Disable `networkmanager`, then enable and start `systemd-networkd`
@@ -154,7 +154,7 @@ sudo systemctl disable --now firewalld.service
 
 | Name | Subnet | DHCP range | ARP reserved |
 |------|--------|------------|--------------|
-| LAN | 192.168.4.0/22 | 5.1-7.254 | 4.120-4.149 |
+| LAN | 172.24.1.0/24 | 5.1-7.254 | 4.120-4.149 |
 
 ## Related Projects
 

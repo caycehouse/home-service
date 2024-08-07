@@ -1,17 +1,17 @@
 endpoints:
   - name: Unifi Dream Machine
     group: ICMP
-    url: icmp://192.168.4.1
+    url: icmp://172.24.1.1
     conditions: ["[CONNECTED] == true"]
     alerts: [{ type: pushover }]
   - name: Dell iDRAC r630
     group: ICMP
-    url: icmp://192.168.6.248
+    url: icmp://172.24.1.124
     conditions: ["[CONNECTED] == true"]
     alerts: [{ type: pushover }]
-  - name: Dell iDRAC r720XD
+  - name: Dell iDRAC r730XD
     group: ICMP
-    url: icmp://192.168.5.198
+    url: icmp://172.24.1.132
     conditions: ["[CONNECTED] == true"]
     alerts: [{ type: pushover }]
   - name: Kubernetes Node babybundts
@@ -36,6 +36,6 @@ endpoints:
     alerts: [{ type: pushover }]
   - name: NAS
     group: ICMP
-    url: icmp://192.168.7.28
+    url: icmp://172.24.1.28
     conditions: ["[CONNECTED] == true"]
     alerts: [{ type: pushover }]

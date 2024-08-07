@@ -1,7 +1,7 @@
 endpoints:
   - name: UniFi (google.com)
     group: DNS
-    url: 192.168.4.1
+    url: 172.24.1.1
     dns:
       query-name: google.com
       query-type: A
@@ -9,23 +9,23 @@ endpoints:
     alerts: [{ type: pushover }]
   - name: UniFi (hostess.internal)
     group: DNS
-    url: 192.168.4.1
+    url: 172.24.1.1
     dns:
       query-name: hostess.internal
       query-type: A
-    conditions: ["[BODY] == 192.168.4.42", "[DNS_RCODE] == NOERROR"]
+    conditions: ["[BODY] == 172.24.1.42", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
   - name: UniFi (unifi.housefam.win)
     group: DNS
-    url: 192.168.4.1
+    url: 172.24.1.1
     dns:
       query-name: unifi.housefam.win
       query-type: A
-    conditions: ["[BODY] == 192.168.4.1", "[DNS_RCODE] == NOERROR"]
+    conditions: ["[BODY] == 172.24.1.1", "[DNS_RCODE] == NOERROR"]
     alerts: [{ type: pushover }]
   - name: UniFi (echo-server.housefam.casa)
     group: DNS
-    url: 192.168.4.1
+    url: 172.24.1.1
     dns:
       query-name: echo-server.housefam.casa
       query-type: A
