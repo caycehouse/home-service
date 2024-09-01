@@ -9,23 +9,23 @@ ContainerName=dhcp-relay
 Environment=TZ=America/New_York
 Exec=--log-dhcp --log-queries --no-daemon \
   --port=0 \
-  --dhcp-range=172.24.1.1,proxy,255.255.252.0 \
+  --dhcp-range=192.168.1.1,proxy,255.255.255.0 \
   --enable-tftp \
   --tftp-root=/var/lib/tftpboot \
   --pxe-service=net:#ipxe,x86PC,,undionly.kpxe \
   --pxe-service=net:#ipxe,X86-64_EFI,,ipxe.efi \
   --dhcp-match=set:bios,60,PXEClient:Arch:00000 \
-  --dhcp-boot=tag:bios,netboot.xyz.kpxe,,172.24.1.128 \
+  --dhcp-boot=tag:bios,netboot.xyz.kpxe,,192.168.1.128 \
   --dhcp-match=set:efi32,60,PXEClient:Arch:00002 \
-  --dhcp-boot=tag:efi32,netboot.xyz.efi,,172.24.1.128 \
+  --dhcp-boot=tag:efi32,netboot.xyz.efi,,192.168.1.128 \
   --dhcp-match=set:efi32-1,60,PXEClient:Arch:00006 \
-  --dhcp-boot=tag:efi32-1,netboot.xyz.efi,,172.24.1.128 \
+  --dhcp-boot=tag:efi32-1,netboot.xyz.efi,,192.168.1.128 \
   --dhcp-match=set:efi64,60,PXEClient:Arch:00007 \
-  --dhcp-boot=tag:efi64,netboot.xyz.efi,,172.24.1.128 \
+  --dhcp-boot=tag:efi64,netboot.xyz.efi,,192.168.1.128 \
   --dhcp-match=set:efi64-1,60,PXEClient:Arch:00008 \
-  --dhcp-boot=tag:efi64-1,netboot.xyz.efi,,172.24.1.128 \
+  --dhcp-boot=tag:efi64-1,netboot.xyz.efi,,192.168.1.128 \
   --dhcp-match=set:efi64-2,60,PXEClient:Arch:00009 \
-  --dhcp-boot=tag:efi64-2,netboot.xyz.efi,,172.24.1.128
+  --dhcp-boot=tag:efi64-2,netboot.xyz.efi,,192.168.1.128
 Image=quay.io/poseidon/dnsmasq:v0.5.0-31-gdc1adc8@sha256:6a839fde323fb405f6be84003a6b9019d9151caa983bfdcbc8cc1b51b1f8627d
 Network=host
 

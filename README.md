@@ -63,7 +63,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
 
 2. Setup the currently used interface with `systemd-networkd`
 
-    📍 _Setting the DNS server to `dnsdist` might make dragons appear 🐉._
+    📍 _Setting the DNS server to a container used on this system might make dragons appear 🐉._
 
     ```sh
     sudo bash -c 'cat << EOF > /etc/systemd/network/enp1s0.network
@@ -72,7 +72,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     [Network]
     DHCP = yes
     DNS = 1.1.1.1
-    DNS = 9.9.9.9
+    DNS = 1.0.0.1
     IPVLAN = containernet
     [DHCPv4]
     UseDNS = false'
@@ -166,3 +166,4 @@ sudo systemctl disable --now firewalld.service
 - [onedr0p/home-service](https://github.com/onedr0p/home-service): Home service stack running on a Beelink EQ12 with Fedora IoT.
 - [bjw-s/nix-config](https://github.com/bjw-s/nix-config/): NixOS driven configuration for running a home service machine, a nas or [nix-darwin](https://github.com/LnL7/nix-darwin) using [deploy-rs](https://github.com/serokell/deploy-rs) and [home-manager](https://github.com/nix-community/home-manager).
 - [truxnell/nix-config](https://github.com/truxnell/nix-config): NixOS driven configuration for running your entire homelab.
+- [joryirving/home-service](https://github.com/joryirving/home-service/): Docker-compose implementation of this repository.
