@@ -36,6 +36,6 @@ endpoints:
     alerts: [{ type: pushover }]
   - name: NAS
     group: ICMP
-    url: icmp://192.168.1.28
+    url: icmp://192.168.42.6
     conditions: ["[CONNECTED] == true"]
     alerts: [{ type: pushover }]
