@@ -26,7 +26,7 @@ Exec=--log-dhcp --log-queries --no-daemon \
   --dhcp-boot=tag:arm64,ipxe-arm64.efi \
   --dhcp-userclass=set:ipxe,iPXE \
   --dhcp-boot=tag:ipxe,http://192.168.1.128/boot.ipxe
-Image=quay.io/poseidon/dnsmasq:v0.5.0-31-gdc1adc8@sha256:6a839fde323fb405f6be84003a6b9019d9151caa983bfdcbc8cc1b51b1f8627d
+Image=quay.io/poseidon/dnsmasq:v0.5.0-37-gf41df2c@sha256:c3ceb14863cab1a9563ba8cccad9a992a9dabe23c0f85c6aee6b370998ffb5ff
 Network=host
 
 [Service]
