@@ -4,13 +4,9 @@
 
 <https://github.com/poseidon/dnsmasq>
 
-## gatus
+## matchbox
 
-<https://github.com/TwiN/gatus>
-
-## netbootxyz
-
-<https://github.com/netbootxyz/netboot.xyz>
+<https://github.com/poseidon/matchbox>
 
 ## node-exporter
 
@@ -33,7 +29,3 @@
     ```sh
     task start-podman-exporter
     ```
-
-## traefik
-
-<https://github.com/traefik/traefik>
