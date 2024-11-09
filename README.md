@@ -74,8 +74,28 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     DNS = 1.1.1.1
     DNS = 1.0.0.1
     IPVLAN = containernet
+    VLAN = vlan42
     [DHCPv4]
     UseDNS = false'
+    ```
+
+    ```sh
+    sudo bash -c 'cat << EOF > /etc/systemd/network/vlan42.netdev
+    [NetDev]
+    Name = vlan42
+    Kind = vlan
+
+    [VLAN]
+    Id = 42
+    ```
+
+    ```sh
+    sudo bash -c 'cat << EOF > /etc/systemd/network/vlan42.network
+    [Match]
+    Name = vlan42
+
+    [Network]
+    DHCP = yes
     ```
 
 3. Setup `containernet` with `systemd-networkd`

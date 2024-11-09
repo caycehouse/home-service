@@ -9,7 +9,7 @@ ContainerName=dhcp-relay
 Environment=TZ=America/New_York
 Exec=--log-dhcp --log-queries --no-daemon \
   --port=0 \
-  --dhcp-range=192.168.1.1,proxy,255.255.255.0 \
+  --dhcp-range=vlan42,192.168.42.1,proxy,255.255.255.0 \
   --enable-tftp \
   --tftp-root=/var/lib/tftpboot \
   --pxe-service=net:#ipxe,x86PC,,undionly.kpxe \
