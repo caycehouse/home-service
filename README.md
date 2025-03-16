@@ -4,7 +4,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
 
 ## Core components
 
-- [direnv](https://github.com/direnv/direnv): Update environment per working directory.
+- [mise](https://mise.jdx.dev/): Dev env
 - [podman](https://github.com/containers/podman): A tool for managing OCI containers and pods with native [systemd](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html) integration.
 - [renovate](https://github.com/renovatebot/renovate): Universal dependency automation tool.
 - [sops](https://github.com/getsops/sops): Manage secrets which are commited to Git using [Age](https://github.com/FiloSottile/age) for encryption.
@@ -17,8 +17,10 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
 1. Install required system deps and reboot
 
     ```sh
-    sudo rpm-ostree install --idempotent --assumeyes git go-task
-    sudo systemctl reboot
+    sudo rpm-ostree update
+    sudo curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | sudo pkexec tee /etc/yum.repos.d/terra.repo
+    sudo rpm-ostree install --idempotent terra-release
+    sudo rpm-ostree install --idempotent --assumeyes git mise
     ```
 
 2. Make a new [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), add it to GitHub and clone your repo

@@ -1,9 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":skipStatusChecks",
     "github>caycehouse/renovate-config",
-    "github>caycehouse/renovate-config:autoMerge.json5"
+    "github>caycehouse/renovate-config:autoMerge.json5",
+    ":skipStatusChecks"
   ],
   "customManagers": [
     {
@@ -15,15 +15,6 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
-    },
-    {
-      "customType": "regex",
-      "description": ["Process taskfile dependencies"],
-      "fileMatch": ["(^|/)Taskfile\\.ya?ml$"],
-      "matchStrings": [
-        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+: (&\\S+\\s)?(?<currentValue>\\S+)"
-      ],
-      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}"
     }
   ],
   "packageRules": [
