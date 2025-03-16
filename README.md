@@ -20,7 +20,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     sudo rpm-ostree update
     sudo curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | sudo pkexec tee /etc/yum.repos.d/terra.repo
     sudo rpm-ostree install --idempotent terra-release
-    sudo rpm-ostree install --idempotent --assumeyes git mise
+    sudo rpm-ostree install --idempotent --assumeyes fish git mise
     ```
 
 2. Make a new [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), add it to GitHub and clone your repo
@@ -36,7 +36,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
 
     ```sh
     cd /var/opt/home-service
-    go-task deps
+    task deps
     sudo systemctl reboot
     ```
 
@@ -65,7 +65,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
 
 2. Setup the currently used interface with `systemd-networkd`
 
-    📍 _Setting the DNS server to a container used on this system might make dragons appear 🐉._
+    📍 _Setting the DNS server to a DNS container used on this system might make dragons appear 🐉._
 
     ```sh
     sudo bash -c 'cat << EOF > /etc/systemd/network/enp1s0.network
@@ -73,8 +73,7 @@ My home service stack running on a [Beelink T4 Pro](https://a.co/d/ghXhMAe) with
     Name = enp1s0
     [Network]
     DHCP = yes
-    DNS = 1.1.1.1
-    DNS = 1.0.0.1
+    DNS = 192.168.1.1
     IPVLAN = containernet
     VLAN = vlan42
     [DHCPv4]
@@ -133,7 +132,7 @@ View the [apps](./apps) directory for documentation on configuring an app contai
 Using the included [Taskfile](./Taskfile.yaml) there are helper commands to start, stop, restart containers and more. Run the command below to view all available tasks.
 
 ```sh
-go-task --list
+task --list
 ```
 
 ### Optional configuration
@@ -146,7 +145,7 @@ go-task --list
 ```sh
 chsh -s /usr/bin/fish
 # IMPORTANT: Log out and log back in
-go-task dotfiles
+task dotfiles
 ```
 
 #### Enable Chrony as a NTP server
